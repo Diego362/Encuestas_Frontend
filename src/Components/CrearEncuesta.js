@@ -8,7 +8,7 @@ export const CrearEncuesta = () => {
 
 
     function getUsuarios() {
-      return axios.get(URL_SERVIDOR +"/usuarios",{
+      return axios.get(URL_SERVIDOR+"/usuarios",{
         headers:{
           Authorization : "Bearer " + localStorage.getItem('token')
         }
