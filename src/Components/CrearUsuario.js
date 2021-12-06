@@ -16,7 +16,7 @@ export const CrearUsuario = () => {
           Contraseña: form.contraseña.value,
         };
         axios.post(URL_SERVIDOR +"/usuarios", data).then((response) => {
-          window.location.replace("/usuarios");
+          window.location.replace("/");
         });
       };
 
