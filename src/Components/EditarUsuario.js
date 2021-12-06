@@ -29,7 +29,7 @@ export const EditarUsuario = () => {
         };
 
         axios.put(URL_SERVIDOR +'/usuarios/'+id_usuario, data).then((response)=>{
-            window.location.replace(URL_SERVIDOR +'/usuarios');
+            window.location.replace('/usuarios');
         });
         
     }

@@ -29,7 +29,7 @@ export const EditarEncuesta = () => {
         };
 
         axios.put(URL_SERVIDOR +'/encuestas/'+id_encuesta, data).then((response)=>{
-            window.location.replace(URL_SERVIDOR +'/encuestas');
+            window.location.replace('/encuestas');
         });
         
     }

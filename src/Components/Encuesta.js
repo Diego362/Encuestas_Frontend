@@ -19,14 +19,14 @@ export const Encuesta = () => {
       const respuestaUsuario = window.confirm('¿Seguro de que quiere eliminar esta encuesta?')
       if (respuestaUsuario) {
         axios.delete(URL_SERVIDOR +'/encuestas/'+id).then(response => {
-          window.location.replace(URL_SERVIDOR +"/encuestas");
+          window.location.replace("/encuestas");
         })
       }
     }
 
     function idEncuesta(encuesta){
       return(
-        window.location.replace(URL_SERVIDOR +"/encuestas/"+encuesta.id_encuesta)
+        window.location.replace("/encuestas/"+encuesta.id_encuesta)
       );
     }
 

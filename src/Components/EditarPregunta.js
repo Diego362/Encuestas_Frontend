@@ -30,7 +30,7 @@ export const EditarPregunta = () => {
         };
 
         axios.put(URL_SERVIDOR +'/preguntas/'+id_pregunta, data).then((response)=>{
-            window.location.replace(URL_SERVIDOR +'/preguntas');
+            window.location.replace('/preguntas');
         });
         
     }

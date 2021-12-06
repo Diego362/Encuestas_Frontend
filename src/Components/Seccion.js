@@ -17,7 +17,7 @@ export const Seccion = () => {
 
     function idSeccion(seccion){
       return(
-        window.location.replace(URL_SERVIDOR +"/secciones/"+seccion.id_seccion)
+        window.location.replace("/secciones/"+seccion.id_seccion)
       );
     }
 

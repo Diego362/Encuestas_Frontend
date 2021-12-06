@@ -29,7 +29,7 @@ export const EditarSeccion = () => {
         };
 
         axios.put(URL_SERVIDOR +'/secciones/'+id_seccion, data).then((response)=>{
-            window.location.replace(URL_SERVIDOR +'/secciones');
+            window.location.replace('/secciones');
         });
         
     }

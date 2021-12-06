@@ -23,7 +23,7 @@ export const Pregunta = () => {
       const respuestaUsuario = window.confirm('¿Seguro de que quiere eliminar esta pregunta?')
         if(respuestaUsuario){
           axios.delete(URL_SERVIDOR+'/preguntas/'+id).then(response => {
-        window.location.replace(URL_SERVIDOR +"/preguntas");
+        window.location.replace("/preguntas");
       })
         }
     }
