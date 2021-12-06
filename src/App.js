@@ -6,7 +6,6 @@ import  Layout  from "./Layouts/Layout";
 import Inicio from "./pages/Inicio.js"
 
 import RutaPrivada from "./Components/RutaPrivada";
-import RutaPublica from "./Components/RutaPublica";
 
 import { CrearUsuario } from "./Components/CrearUsuario";
 import { Usuario } from "./Components/Usuario";
