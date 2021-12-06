@@ -11,7 +11,7 @@ export const EditarSeccion = () => {
 
 
     useEffect(() => {
-        axios.get("http://localhost:5000/secciones/"+id_seccion).then((response)=>{
+        axios.get(URL_SERVIDOR +"/secciones/"+id_seccion).then((response)=>{
             setSecciones(response.data);
             console.log(id_seccion)
         })
@@ -27,8 +27,8 @@ export const EditarSeccion = () => {
 
         };
 
-        axios.put('http://localhost:5000/secciones/'+id_seccion, data).then((response)=>{
-            window.location.replace('http://localhost:3000/secciones');
+        axios.put(URL_SERVIDOR +'/secciones/'+id_seccion, data).then((response)=>{
+            window.location.replace(URL_SERVIDOR +'/secciones');
         });
         
     }

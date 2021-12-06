@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 export const Pregunta = () => {
 
     function getPreguntas() {
-        return axios.get("http://localhost:5000/preguntas",{
+        return axios.get(URL_SERVIDOR +"/preguntas",{
           headers:{
             Authorization : "Bearer " + localStorage.getItem('token')
           }
@@ -14,15 +14,15 @@ export const Pregunta = () => {
 
     function idPregunta(pregunta){
       return(
-        window.location.replace("http://localhost:3000/preguntas/"+pregunta.id_pregunta)
+        window.location.replace(URL_SERVIDOR +"/preguntas/"+pregunta.id_pregunta)
       );
     }
     
     function borrarPregunta(id){
       const respuestaUsuario = window.confirm('¿Seguro de que quiere eliminar esta pregunta?')
         if(respuestaUsuario){
-          axios.delete('http://localhost:5000/preguntas/'+id).then(response => {
-        window.location.replace("/preguntas");
+          axios.delete(URL_SERVIDOR+'/preguntas/'+id).then(response => {
+        window.location.replace(URL_SERVIDOR +"/preguntas");
       })
         }
     }

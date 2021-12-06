@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 export const Encuesta = () => {
 
     function getEncuestas() {
-        return axios.get("http://localhost:5000/encuestas",{
+        return axios.get(URL_SERVIDOR +"/encuestas",{
           headers:{
             Authorization : "Bearer " + localStorage.getItem('token')
           }
@@ -17,15 +17,15 @@ export const Encuesta = () => {
     function borrarEncuesta(id){
       const respuestaUsuario = window.confirm('¿Seguro de que quiere eliminar esta encuesta?')
       if (respuestaUsuario) {
-        axios.delete('http://localhost:5000/encuestas/'+id).then(response => {
-          window.location.replace("/encuestas");
+        axios.delete(URL_SERVIDOR +'/encuestas/'+id).then(response => {
+          window.location.replace(URL_SERVIDOR +"/encuestas");
         })
       }
     }
 
     function idEncuesta(encuesta){
       return(
-        window.location.replace("http://localhost:3000/encuestas/"+encuesta.id_encuesta)
+        window.location.replace(URL_SERVIDOR +"/encuestas/"+encuesta.id_encuesta)
       );
     }
 

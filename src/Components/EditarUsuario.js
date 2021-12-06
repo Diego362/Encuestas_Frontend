@@ -12,7 +12,7 @@ export const EditarUsuario = () => {
 
 
     useEffect(() => {
-        axios.get("http://localhost:5000/usuarios/"+id_usuario).then((response)=>{
+        axios.get(URL_SERVIDOR +"/usuarios/"+id_usuario).then((response)=>{
             setUsuarios(response.data);
         })
     }, [id_usuario]);
@@ -27,8 +27,8 @@ export const EditarUsuario = () => {
             Contraseña: form.contraseña.value,
         };
 
-        axios.put('http://localhost:5000/usuarios/'+id_usuario, data).then((response)=>{
-            window.location.replace('http://localhost:3000/usuarios');
+        axios.put(URL_SERVIDOR +'/usuarios/'+id_usuario, data).then((response)=>{
+            window.location.replace(URL_SERVIDOR +'/usuarios');
         });
         
     }

@@ -8,7 +8,7 @@ export const Usuario = () => {
     
 
     function getUsuarios() {
-        return axios.get("http://localhost:5000/usuarios",{
+        return axios.get(URL_SERVIDOR +"/usuarios",{
           headers:{
             Authorization : "Bearer " + localStorage.getItem('token')
           }
@@ -18,15 +18,15 @@ export const Usuario = () => {
     function borrarUsuario(id){
       const respuestaUsuario = window.confirm('¿Seguro de que quiere eliminar este usuario?')
       if (respuestaUsuario){
-        axios.delete('http://localhost:5000/usuarios/'+id).then(response => {
-        window.location.replace("/usuarios");
+        axios.delete(URL_SERVIDOR +'/usuarios/'+id).then(response => {
+        window.location.replace(URL_SERVIDOR +"/usuarios");
       })
       }
     }
 
     function idUsuario(usuario){
       return(
-        window.location.replace("http://localhost:3000/usuarios/"+usuario.id_usuario)
+        window.location.replace(URL_SERVIDOR+"/usuarios/"+usuario.id_usuario)
       );
     }
 

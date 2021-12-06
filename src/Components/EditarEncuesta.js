@@ -11,7 +11,7 @@ export const EditarEncuesta = () => {
 
 
     useEffect(() => {
-        axios.get("http://localhost:5000/encuestas/"+id_encuesta).then((response)=>{
+        axios.get(URL_SERVIDOR +"/encuestas/"+id_encuesta).then((response)=>{
             setEncuestas(response.data);
             console.log(id_encuesta)
         })
@@ -27,8 +27,8 @@ export const EditarEncuesta = () => {
 
         };
 
-        axios.put('http://localhost:5000/encuestas/'+id_encuesta, data).then((response)=>{
-            window.location.replace('http://localhost:3000/encuestas');
+        axios.put(URL_SERVIDOR +'/encuestas/'+id_encuesta, data).then((response)=>{
+            window.location.replace(URL_SERVIDOR +'/encuestas');
         });
         
     }

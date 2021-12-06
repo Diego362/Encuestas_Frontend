@@ -11,8 +11,9 @@ function Login(){
           email: form.correo.value,
           password: form.contraseña.value,
         };
-        axios.post("http://localhost:5000/login", data).then((response) => {
-        localStorage.setItem('token', response.data.token) 
+        axios.post(URL_SERVIDOR+"/login", data).then((response) => {
+        localStorage.setItem('token', response.data.token)
+        window.location.replace("/");
         });
 
 

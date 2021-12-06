@@ -2,12 +2,13 @@ import { useEffect, useState } from "react";
 import React from 'react'
 import axios from "axios";
 import { Link } from "react-router-dom";
+import URL_SERVIDOR from "../constantes";
 
 export const CrearEncuesta = () => {
 
 
     function getUsuarios() {
-      return axios.get("http://localhost:5000/usuarios",{
+      return axios.get(URL_SERVIDOR +"/usuarios",{
         headers:{
           Authorization : "Bearer " + localStorage.getItem('token')
         }
@@ -22,7 +23,7 @@ export const CrearEncuesta = () => {
           Nombre: form.nombres.value,
           id_usuario: form.usuario_id.value,
         };
-        axios.post("http://localhost:5000/encuestas", data).then((response) => {
+        axios.post(URL_SERVIDOR +"/encuestas", data).then((response) => {
           window.location.replace("/encuestas");
         });
       };

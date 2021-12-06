@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 export const Seccion = () => {
 
     function getSecciones() {
-        return axios.get("http://localhost:5000/secciones",{
+        return axios.get(URL_SERVIDOR +"/secciones",{
           headers:{
             Authorization : "Bearer " + localStorage.getItem('token')
           }
@@ -16,14 +16,14 @@ export const Seccion = () => {
 
     function idSeccion(seccion){
       return(
-        window.location.replace("http://localhost:3000/secciones/"+seccion.id_seccion)
+        window.location.replace(URL_SERVIDOR +"/secciones/"+seccion.id_seccion)
       );
     }
 
     function borrarSeccion(id){
       const respuestaUsuario = window.confirm('¿Seguro de que quiere eliminar esta seccion?')
         if(respuestaUsuario){
-          axios.delete('http://localhost:5000/secciones/'+id).then(response => {
+          axios.delete(URL_SERVIDOR +'/secciones/'+id).then(response => {
           window.location.replace("/secciones");
       })
         }

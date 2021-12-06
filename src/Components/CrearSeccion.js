@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 export const CrearSeccion = () => {
 
     function getEncuestas() {
-        return axios.get("http://localhost:5000/encuestas",{
+        return axios.get(URL_SERVIDOR +"/encuestas",{
           headers:{
             Authorization : "Bearer " + localStorage.getItem('token')
           }
@@ -20,7 +20,7 @@ export const CrearSeccion = () => {
           Nombre: form.nombres.value,
           id_encuesta: form.id_encuesta.value,
         };
-        axios.post("http://localhost:5000/secciones", data).then((response) => {
+        axios.post(URL_SERVIDOR +"/secciones", data).then((response) => {
           window.location.replace("/secciones");
         });
       };
