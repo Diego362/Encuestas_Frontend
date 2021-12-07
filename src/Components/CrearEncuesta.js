@@ -21,10 +21,10 @@ export const CrearEncuesta = () => {
     
         const data = {
           Nombre: form.nombres.value,
-          id_usuario: form.usuario_id.value,
+          id_usuario: form.id_usuario.value,
         };
         axios.post(URL_SERVIDOR +"/encuestas", data).then((response) => {
-          window.location.replace("/encuestas");
+        window.location.replace("/encuestas");
         });
       };
 
@@ -46,7 +46,7 @@ export const CrearEncuesta = () => {
                     <select className ="form-select" name="id_usuario">
                       {usuarios.map((usuario)=>{
                         return(
-                          <option key={usuario.id} value={usuario.id}>
+                          <option key={usuario.id_usuario} value={usuario.id_usuario}>
                             {usuario.nombre}
                           </option>
                         );
