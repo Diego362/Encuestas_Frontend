@@ -7,7 +7,7 @@ import URL_SERVIDOR from "../constantes";
 export const Encuesta = () => {
 
     function getEncuestas() {
-        return axios.get(URL_SERVIDOR +"/encuestas",{
+        return axios.get("https://encuestas-backend.herokuapp.com/encuestas",{
           headers:{
             Authorization : "Bearer " + localStorage.getItem('token')
           }
