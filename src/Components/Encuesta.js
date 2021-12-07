@@ -7,7 +7,7 @@ import URL_SERVIDOR from "../constantes";
 export const Encuesta = () => {
 
     function getEncuestas() {
-        return axios.get("https://encuestas-backend.herokuapp.com/encuestas",{
+        return axios.get(URL_SERVIDOR +"/encuestas",{
           headers:{
             Authorization : "Bearer " + localStorage.getItem('token')
           }
@@ -18,7 +18,7 @@ export const Encuesta = () => {
     function borrarEncuesta(id){
       const respuestaUsuario = window.confirm('¿Seguro de que quiere eliminar esta encuesta?')
       if (respuestaUsuario) {
-        axios.delete(URL_SERVIDOR +'/encuestas/'+id).then(response => {
+        axios.delete(URL_SERVIDOR+'/encuestas/'+id).then(response => {
           window.location.replace("/encuestas");
         })
       }

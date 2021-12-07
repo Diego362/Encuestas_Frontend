@@ -13,8 +13,13 @@ function Login(){
           password: form.contraseña.value,
         };
         axios.post(URL_SERVIDOR+"/login", data).then((response) => {
-        localStorage.setItem('token', response.data.token)
-        window.location.replace("/");
+          if (response.data.token!=null){
+            localStorage.setItem('token', response.data.token)
+            window.location.replace("/");
+          }else{
+            window.alert("Usuario no existe")
+          }
+        
         });
 
 
